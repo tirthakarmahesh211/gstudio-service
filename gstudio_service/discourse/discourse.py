@@ -97,7 +97,10 @@ PAGE_GET =(requests.get, "/t/{id}.json", None)
 HEADERS = {"Content-Type": "multipart/form-data" }
 
 MESSAGE_GET = (requests.get, "/posts", None)
-MESSAGE_POST = (requests.post, "/posts", None)
+MESSAGE_POST = (requests.post, "/posts.json", None)
+PRIVATE_MESSAGE_GET = (requests.get, "/topics/private-messages-sent/{username}.json", None)
+ENABLE_PRIVATE_MESSAGE_PUT = (requests.put, "/admin/site_settings/enable_private_messages", None)
+NOTIFICATION_GET = (requests.get, "/notifications.json", None)
 
 UPLOAD_FILE = (requests.post, "/uploads.json", None)
 
@@ -775,22 +778,25 @@ class Discourse(object):
 			print(response)
 			return response
 		elif type == "message":
-			if function == requests.put and False:
-				response = requests.get(str(self.main_url+"/t/{id}.json").format(id=params["id"]))
-				json_data = response.json()
-				url=str(self.main_url+PAGE_UPDATE[1]).format(slug=json_data["post_stream"]["posts"][0]["topic_slug"],id=json_data["post_stream"]["posts"][0]["topic_id"])
-				params.update(HEADERS)
-				response = function(url,params=params)
-				return response
-			elif function == requests.delete and False:
+			# if function == requests.put:
+			# 	response = requests.get(str(self.main_url+"/t/{id}.json").format(id=params["id"]))
+			# 	json_data = response.json()
+			# 	url=str(self.main_url+PAGE_UPDATE[1]).format(slug=json_data["post_stream"]["posts"][0]["topic_slug"],id=json_data["post_stream"]["posts"][0]["topic_id"])
+			# 	params.update(HEADERS)
+			# 	response = function(url,params=params)
+			# 	return response
+			if function == requests.delete and False:
 				url=str(self.main_url+PAGE_DELETE[1]).format(id=params["id"])
 				response = function(url,params=params)
 				return response
 			elif function == requests.get:
-				url = URL
-				print(url)
+				if params.get("username"):
+					url = str(self.main_url+PRIVATE_MESSAGE_GET[1]).format(username=params["username"])
+				else:
+					url = URL
 				response = function(url,params=params)				
 			else:
+				print("else block execute")
 				url = URL
 				print(url)
 				print(params)
@@ -852,11 +858,20 @@ class Discourse(object):
 	def get_page(self,params,type):
 		return self.request(*PAGE_GET,params=params,type=type)
 
-	def get_message(self,params,type):
+	def get_messages(self,params,type):
 		return self.request(*MESSAGE_GET,params=params,type=type)
+
+	def get_private_messages(self,params,type):
+		return self.request(*PRIVATE_MESSAGE_GET,params=params,type=type)
+
+	def enable_private_messages(self,params,type):
+		return self.request(*ENABLE_PRIVATE_MESSAGE_PUT,params=params,type=type)
 
 	def create_message(self,params,type):
 		return self.request(*MESSAGE_POST,params=params,type=type)
+
+	def get_some_notifications(self,params,type):
+		return self.request(*NOTIFICATION_GET,params=params,type=type)
 
 	def upload_file(self,params,type):
 		return self.request(*UPLOAD_FILE,params=params,type=type)
