@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from discourse.discourse import Discourse
 from django.http import HttpResponse
-from gstudio_service.local_settings import DISCOURSE_URL, DISCOURSE_USERNAME, DISCOURSE_API_KEY
 
-# Create your views here.
-api = Discourse(DISCOURSE_URL, DISCOURSE_USERNAME, DISCOURSE_API_KEY)
-
+params = {}
 def upload_file(request):
-	FILE_PATH = ""
-	return HttpResponse(api.upload_file({'files[]': {"file":open(FILE_PATH,'rb') },"type":"composer" },"files"))
+	if request.POST:
+		FILE_PATH = request.POST.get("FILE_PATH")
+	else:
+		FILE_PATH = ""
+	params = {'files[]': {"file":open(FILE_PATH,'rb') },"type":"composer" }
+	return HttpResponse(json.dumps(File(**params).upload_file()), content_type="application/json")
