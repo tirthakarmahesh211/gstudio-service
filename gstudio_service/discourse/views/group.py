@@ -1,40 +1,37 @@
 from django.shortcuts import render
-from discourse.discourse import Discourse
 from django.http import HttpResponse
-from gstudio_service.local_settings import DISCOURSE_URL, DISCOURSE_USERNAME, DISCOURSE_API_KEY
+from discourse.models.group import Group
 
 # Create your views here.
-api = Discourse(DISCOURSE_URL, DISCOURSE_USERNAME, DISCOURSE_API_KEY)
+
+import json
 
 # Basic CRUD operation of Group
+params = {}
+
 def get_groups(request):
-	return HttpResponse(api.groups("group"))
+	return HttpResponse(json.dumps(Group(**params).get_groups()), content_type="application/json")
 
 def get_group(request):
 	if request.GET:
-		if request.GET.get("group_name"):
-			group_name = request.GET.get("group_name")
-			# SAMPLE_JSON = {"group_name":group_name}
-		else:
-			return HttpResponse("Failed")
+		group_name = request.GET.get("group_name")
+		params = {"group_name":group_name}
 	else:
-		group_name= "staff"
-	return HttpResponse(api.group(group_name,"group"))
+		params= {"group[name]":"NEW_GROUP"}
+	return HttpResponse(json.dumps(Group(**params).get_group()), content_type="application/json")
 
 def add_group(request):
 	if request.POST:
-		if request.POST.get("group_name"):
-			group_name = request.POST.get("group_name")
-			SAMPLE_JSON = {"group[name]":group_name,"group[public_admission]":"true"}
-		else:
-			return HttpResponse("Failed")
+		group_name = request.POST.get("group_name")
+		group_title = request.POST.get("group_title")
+		params = {"group[name]":group_name,"group[public_admission]":"true","group[title]":group_title}
 	else:
-		SAMPLE_JSON = {"group[name]":"TestGroup","group[public_admission]":"true"}
-	return HttpResponse(api.add_group(SAMPLE_JSON,"group"))	
-	# return HttpResponse(api.add_group({"group[name]":"TestGroup","group[public_admission]":"true"},"group"))
+		params = {"group[name]":"NewGroup10","group[public_admission]":"true","group[automatic]": 'false',}
+	return HttpResponse(json.dumps(Group(**params).add_group()), content_type="application/json")	
 
 def update_group(request):
 	if request.POST:
+		print(request.POST)
 		if request.POST.get("group_name"):
 			group_name = request.POST.get("group_name")
 
@@ -44,8 +41,8 @@ def update_group(request):
 		else:
 			return HttpResponse("Failed")
 	else:
-		SAMPLE_JSON = {"group[name]":"TestGroup","group[title]":"Group Title"}
-	return HttpResponse(api.update_group(SAMPLE_JSON,"group"))
+		params = {"new_group_name":"NEW_GROUP","group[name]":"TestGroup","group[title]":"Group Titleee"}
+	return HttpResponse(json.dumps(Group(**params).update_group()), content_type="application/json")	
 
 def delete_group(request):
 	if request.POST:
@@ -55,5 +52,5 @@ def delete_group(request):
 		else:
 			return HttpResponse("Failed")
 	else:
-		SAMPLE_JSON = {"group[name]":"TestGroup"}
-	return HttpResponse(api.delete_group(SAMPLE_JSON,"group"))
+		params = {"group[name]":"TestGroup1"}
+	return HttpResponse(json.dumps(Group(**params).delete_group()), content_type="application/json")	
