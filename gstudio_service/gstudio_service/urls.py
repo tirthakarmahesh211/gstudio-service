@@ -14,23 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from discourse.views import *
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('get_groups/', get_groups, name="get_groups"),
-    path('get_group/', get_group, name="get_group"),
-    path('add_group/', add_group, name="add_group"),
-    path('delete_group/', delete_group, name="delete_group"),
-    path('update_group/', update_group, name="update_group"),
+    path('group/', include('discourse.urls.group')),
+    path('page/', include('discourse.urls.page')),
+    path('message/', include('discourse.urls.message')),
+    path('file/', include('discourse.urls.file')),
 
-    path('add_page/', add_page, name="add_page"),
-    path('update_page/', update_page, name="update_page"),
-    path('delete_page/', delete_page, name="delete_page"),
-    path('get_page/', get_page, name="get_page"),
-
-    path('get_message/', get_message, name="get_message"),
-    
-    path('upload_file/', upload_file, name="upload_file"),
 ]

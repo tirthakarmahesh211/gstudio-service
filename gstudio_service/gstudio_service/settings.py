@@ -116,7 +116,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-
 STATIC_URL = '/static/'
 
 DISCOURSE_API_KEY = ""
@@ -124,3 +123,10 @@ DISCOURSE_API_KEY = ""
 DISCOURSE_USERNAME = ""
 
 DISCOURSE_URL = ""
+
+try:
+    from gstudio_service.local_settings import *
+    # print "Local settings applied"
+except:
+    # print "Default settings applied"
+    pass
