@@ -1,5 +1,5 @@
 from discourse.models.discourse import Discourse
-from discourse.models.api import GROUP_GET, GROUPS_GET, GROUP_PUT, GROUP_DELETE, GROUP_ADD, HEADERS, GROUP_OWNERS_ADD, GROUP_USER_ADD, USER_GET1
+from discourse.models.api import GROUP_GET, GROUPS_GET, GROUP_PUT, GROUP_DELETE, GROUP_ADD, HEADERS, GROUP_OWNERS_ADD, GROUP_USER_ADD, USER_GET1, GROUP_OWNERS_REMOVE
 import requests
 from gstudio_service.settings import DISCOURSE_USERNAME
 
@@ -108,6 +108,88 @@ class Group(Discourse):
 			ID = json_data["group"]["id"]
 			url=str(self.main_url+GROUP_DELETE[1]).format(id=ID)
 			response = requests.delete(url,params=self.__dict__ ,headers=HEADERS)
+			if response.status_code == 200:
+				return response.json()
+		return "Failed"
+
+	def add_group_member(self):
+		url=str(self.main_url+GROUP_GET[1]).format(name=self.__dict__.get("group[name]"))
+		print(url)
+		response = requests.get(url,params=params)
+		print(response)
+		if response.status_code == 200:
+			json_data = response.json()
+			ID = json_data["group"]["id"]
+			url=str(self.main_url+GROUP_USER_ADD[1]).format(group_id=ID)
+			print(url)
+			print(self.__dict__)
+			response = requests.put(url,params=self.__dict__ )
+			print(response)
+			if response.status_code == 200:
+				return response.json()
+		return "Failed"
+
+	def remove_group_member(self):
+		url=str(self.main_url+GROUP_GET[1]).format(name=self.__dict__.get("group[name]"))
+		print(url)
+		response = requests.get(url,params=params)
+		print(response)
+		if response.status_code == 200:
+			json_data = response.json()
+			ID = json_data["group"]["id"]
+			url=str(self.main_url+GROUP_USER_ADD[1]).format(group_id=ID)
+			print(url)
+			print(self.__dict__)
+			response = requests.delete(url,params=self.__dict__ )
+			print(response)
+			if response.status_code == 200:
+				return response.json()
+		return "Failed"
+
+	def add_group_owner(self):
+		url=str(self.main_url+GROUP_GET[1]).format(name=self.__dict__.get("group[name]"))
+		print(url)
+		response = requests.get(url,params=params)
+		print(response)
+		if response.status_code == 200:
+			json_data = response.json()
+			ID = json_data["group"]["id"]
+			url=str(self.main_url+GROUP_OWNERS_ADD[1]).format(id=ID)
+			print(url)
+			print(self.__dict__)
+			response = requests.put(url,params=self.__dict__ )
+			print(response)
+			if response.status_code == 200:
+				return response.json()
+		return "Failed"
+
+	def remove_group_owner(self):
+		url=str(self.main_url+GROUP_GET[1]).format(name=self.__dict__.get("group[name]"))
+		print(url)
+		response = requests.get(url,params=params)
+		print(response)
+		if response.status_code == 200:
+			json_data = response.json()
+			ID = json_data["group"]["id"]
+			url=str(self.main_url+GROUP_OWNERS_REMOVE[1]).format(id=ID)
+			print(url)
+			print(self.__dict__)
+			response = requests.delete(url,params=self.__dict__,headers=HEADERS )
+			print(response)
+			if response.status_code == 200:
+				return response.json()
+		return "Failed"
+
+	def set_mentionable_and_messageable_level(self):
+		url=str(self.main_url+GROUP_GET[1]).format(name=self.__dict__.get("group[name]"))
+		response = requests.get(url,params=params)
+		if response.status_code == 200:
+			json_data = response.json()
+			ID = json_data["group"]["id"]
+			url=str(self.main_url+GROUP_PUT[1]).format(id=ID)
+			print(url)
+			print(self.__dict__)
+			response = requests.put(url,params=self.__dict__ ,headers=HEADERS)
 			if response.status_code == 200:
 				return response.json()
 		return "Failed"
