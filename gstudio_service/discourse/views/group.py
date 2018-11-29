@@ -26,7 +26,7 @@ def add_group(request):
 		group_title = request.POST.get("group_title")
 		params = {"group[name]":group_name,"group[public_admission]":"true","group[title]":group_title}
 	else:
-		params = {"group[name]":"NewGroup10","group[public_admission]":"true","group[automatic]": 'false',}
+		params = {"group[name]":"NEW_GROUP","group[public_admission]":"true","group[automatic]": 'false'}
 	return HttpResponse(json.dumps(Group(**params).add_group()), content_type="application/json")	
 
 def update_group(request):
@@ -37,7 +37,7 @@ def update_group(request):
 
 		if request.POST.get("title"):
 			title = request.POST.get("title")
-			SAMPLE_JSON = {"group[name]":group_name,"group[title]":title}
+			params = {"group[name]":group_name,"group[title]":title}
 		else:
 			return HttpResponse("Failed")
 	else:
@@ -48,9 +48,79 @@ def delete_group(request):
 	if request.POST:
 		if request.POST.get("group_name"):
 			group_name = request.POST.get("group_name")
-			SAMPLE_JSON = {"group[name]":group_name}
+			params = {"group[name]":group_name}
 		else:
 			return HttpResponse("Failed")
 	else:
-		params = {"group[name]":"TestGroup1"}
-	return HttpResponse(json.dumps(Group(**params).delete_group()), content_type="application/json")	
+		params = {"group[name]":"NEW_GROUP"}
+	return HttpResponse(json.dumps(Group(**params).delete_group()), content_type="application/json")
+
+def add_group_member(request):
+	if request.POST:
+		if request.POST.get("group_name"):
+			group_name = request.POST.get("group_name")
+			usernames = request.POST.get("usernames")
+			params = {"group[name]":group_name,"usernames":usernames}
+		else:
+			return HttpResponse("Failed")
+	else:
+		params = {"usernames":"Siddhu_Dhangar","group[name]":"NEW_GROUP"}
+	return HttpResponse(json.dumps(Group(**params).add_group_member()), content_type="application/json")
+
+def remove_group_member(request):
+	if request.POST:
+		if request.POST.get("group_name"):
+			group_name = request.POST.get("group_name")
+			usernames = request.POST.get("usernames")
+			params = {"group[name]":group_name,"usernames":usernames}
+		else:
+			return HttpResponse("Failed")
+	else:
+		params = {"usernames":"Siddhu_Dhangar","group[name]":"NEW_GROUP"}
+	return HttpResponse(json.dumps(Group(**params).remove_group_member()), content_type="application/json")
+
+def add_group_owner(request):
+	if request.POST:
+		if request.POST.get("group_name"):
+			group_name = request.POST.get("group_name")
+			usernames = request.POST.get("usernames")
+			params = {"group[name]":group_name,"usernames":usernames}
+		else:
+			return HttpResponse("Failed")
+	else:
+		params = {"group[usernames]":"Siddhu_Dhangar","group[name]":"NEW_GROUP"}
+	return HttpResponse(json.dumps(Group(**params).add_group_owner()), content_type="application/json")
+
+def remove_group_owner(request):
+	if request.POST:
+		if request.POST.get("group_name"):
+			group_name = request.POST.get("group_name")
+			usernames = request.POST.get("usernames")
+			params = {"group[name]":group_name,"usernames":usernames}
+		else:
+			return HttpResponse("Failed")
+	else:
+		params = {"usernames":"Siddhu_Dhangar","group[name]":"NEW_GROUP"}
+	return HttpResponse(json.dumps(Group(**params).remove_group_owner()), content_type="application/json")
+
+def set_mentionable_level(request):
+	if request.POST:
+		if request.POST.get("group_name"):
+			group_name = request.POST.get("group_name")
+			params = {"group[name]":group_name}
+		else:
+			return HttpResponse("Failed")
+	else:
+		params = {"group[name]":"NEW_GROUP","group[mentionable_level]":"99"}
+	return HttpResponse(json.dumps(Group(**params).set_mentionable_and_messageable_level()), content_type="application/json")
+
+def set_messageable_level(request):
+	if request.POST:
+		if request.POST.get("group_name"):
+			group_name = request.POST.get("group_name")
+			params = {"group[name]":group_name}
+		else:
+			return HttpResponse("Failed")
+	else:
+		params = {"group[name]":"NEW_GROUP","group[messageable_level]":"99"}
+	return HttpResponse(json.dumps(Group(**params).set_mentionable_and_messageable_level()), content_type="application/json")
