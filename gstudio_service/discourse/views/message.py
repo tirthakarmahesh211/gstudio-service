@@ -27,7 +27,7 @@ def create_message(request):
 		params = {"title":title,"raw":raw,"target_usernames":target_usernames,"archetype":archetype}
 
 	else:
-		params = {"title":"Test message vvv rrrrrrrrrggggggggggg pppp","raw": "private test messae mmmmmmmmmmmmmmm","target_usernames":"NewGroup10","archetype": "private_message"}
+		params = {"title":"Test Message","raw": "Description of Test Message","target_usernames":"NEW_GROUP","archetype": "private_message"}
 	return HttpResponse(json.dumps(Message(**params).create_message()), content_type="application/json")
 
 def get_some_notifications(request):
@@ -44,7 +44,7 @@ def update_message(request):
 		raw = request.POST.get("raw")
 		params = {"post[raw]":raw}
 	else:
-		params = {"title":"Test message vvv rrrrrrrrrggggggggggg pppp","post[raw]":"Test messageeeerrrrrrrrrrrrrrrrrr"}
+		params = {"id":123,"title":"Test Message","post[raw]":"Test messageeeerrrrrrrrrrrrrrrrrr","target_usernames":"NEW_GROUP","archetype": "private_message"}
 	return HttpResponse(json.dumps(Message(**params).update_message()), content_type="application/json")
 
 def delete_message(request):
@@ -52,5 +52,5 @@ def delete_message(request):
 		title = request.POST.get("title")
 		params = {"title":title}
 	else:
-		params = {"title":"Test message vvv rrrrrrrrrggggggggggg pppp"}
+		params = {"title":"Test Message"}
 	return HttpResponse(json.dumps(Message(**params).delete_message()), content_type="application/json")

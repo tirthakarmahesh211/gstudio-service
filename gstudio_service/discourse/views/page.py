@@ -33,7 +33,7 @@ def delete_page(request):
 		title = request.POST.get("title")
 		params = {"title":title,"category_id": 0}
 	else:
-		params = {"title":"Test messageemmmmm for private message","category_id": 0}
+		params = {"title":"test message vvv rrrrrrrrrrrr pppp","category_id": 0}
 	return HttpResponse(json.dumps(Page(**params).delete_page()), content_type="application/json")	
 
 def get_page(request):
@@ -44,5 +44,5 @@ def get_page(request):
 		else:
 			return HttpResponse("Failed")
 	else:
-		params = {"id":78}
+		params = {"title":"Test message vvv rrrrrrrrrrrr pppp"}
 	return HttpResponse(json.dumps(Page(**params).get_page()), content_type="application/json")	
