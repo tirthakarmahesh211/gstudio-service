@@ -15,7 +15,7 @@ def get_groups(request):
 def get_group(request):
 	if request.GET:
 		group_name = request.GET.get("group_name")
-		params = {"group_name":group_name}
+		params = {"group[name]":group_name}
 	else:
 		params= {"group[name]":"NEW_GROUP"}
 	return HttpResponse(json.dumps(Group(**params).get_group()), content_type="application/json")
@@ -24,7 +24,7 @@ def add_group(request):
 	if request.POST:
 		group_name = request.POST.get("group_name")
 		group_title = request.POST.get("group_title")
-		params = {"group[name]":group_name,"group[public_admission]":"true","group[title]":group_title}
+		params = {"group[name]":group_name,"group[public_admission]":"true","group[title]":group_title,"group[automatic]": 'false'}
 	else:
 		params = {"group[name]":"NEW_GROUP","group[public_admission]":"true","group[automatic]": 'false'}
 	return HttpResponse(json.dumps(Group(**params).add_group()), content_type="application/json")	
@@ -34,10 +34,9 @@ def update_group(request):
 		print(request.POST)
 		if request.POST.get("group_name"):
 			group_name = request.POST.get("group_name")
-
-		if request.POST.get("title"):
 			title = request.POST.get("title")
-			params = {"group[name]":group_name,"group[title]":title}
+			new_group_name = request.POST.get("new_group_name")
+			params = {"group[name]":group_name,"group[title]":title,"new_group_name":new_group_name}
 		else:
 			return HttpResponse("Failed")
 	else:
@@ -84,7 +83,7 @@ def add_group_owner(request):
 		if request.POST.get("group_name"):
 			group_name = request.POST.get("group_name")
 			usernames = request.POST.get("usernames")
-			params = {"group[name]":group_name,"usernames":usernames}
+			params = {"group[name]":group_name,"group[usernames]":usernames}
 		else:
 			return HttpResponse("Failed")
 	else:
@@ -107,7 +106,7 @@ def set_mentionable_level(request):
 	if request.POST:
 		if request.POST.get("group_name"):
 			group_name = request.POST.get("group_name")
-			params = {"group[name]":group_name}
+			params = {"group[name]":group_name,"group[messageable_level]":"99"}
 		else:
 			return HttpResponse("Failed")
 	else:
@@ -118,7 +117,7 @@ def set_messageable_level(request):
 	if request.POST:
 		if request.POST.get("group_name"):
 			group_name = request.POST.get("group_name")
-			params = {"group[name]":group_name}
+			params = {"group[name]":group_name,"group[messageable_level]":"99"}
 		else:
 			return HttpResponse("Failed")
 	else:
