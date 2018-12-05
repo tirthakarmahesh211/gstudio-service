@@ -20,7 +20,8 @@ GROUP_USER_REMOVE =    (requests.delete, "/groups/{group_id}/members.json", None
 PAGE_ADD = (requests.post, "/posts.json", None)
 PAGE_UPDATE =(requests.put, "/t/{slug}/{id}.json", None)
 PAGE_DELETE =(requests.delete, "/t/{id}.json", None)
-PAGE_GET =(requests.get, "/t/{id}", None)
+#PAGE_GET =(requests.get, "/t/{id}", None)
+PAGE_GET =(requests.get, "/t/{slug}/{id}.json", None)
 HEADERS = {"Content-Type": "multipart/form-data" }
 PAGE_GET1 =(requests.get, "/t/{slug}.json", None)
 
