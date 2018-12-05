@@ -1,5 +1,5 @@
 from discourse.models.discourse import Discourse
-from discourse.models.api import PAGE_GET, PAGE_DELETE, PAGE_ADD, PAGE_UPDATE, HEADERS, PAGE_GET1
+from discourse.models.api import PAGE_GET, PAGE_DELETE, PAGE_ADD, PAGE_UPDATE, HEADERS, PAGE_GET1, GROUP_GET
 import requests
 from discourse.utils import convert_page_title_to_slug
 class Page(Discourse):
@@ -44,8 +44,16 @@ class Page(Discourse):
 		return self.__dict__
 
 	def get_page(self):
-		url=str(self._main_url+GROUP_GET[1]).format(name=self.__dict__.get("group[name]"))
+		url=str(self.main_url+PAGE_GET1[1]).format(slug=convert_page_title_to_slug(title=self.__dict__.get("title")))
 		response = requests.get(url,params=self.__dict__,headers=HEADERS)
+		# print(response.json())
+		if response.status_code == 200:
+			json_data = response.json()
+			ID = json_data["id"]
+			url=str(self._main_url+PAGE_GET[1]).format(slug=convert_page_title_to_slug(title=self.__dict__.get("title")),id=self.__dict__.get("id"))
+			print(url)
+			response = requests.get(url,params=self.__dict__,headers=HEADERS)
+			print(response)
 		if response.status_code == 200:
 			return response.json()
 
