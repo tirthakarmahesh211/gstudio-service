@@ -125,4 +125,4 @@ DISCOURSE_USERNAME = ""
 
 DISCOURSE_URL = ""
 
-URL = ""
+HOSTNAME = "https://staging.metastudio.org/"
