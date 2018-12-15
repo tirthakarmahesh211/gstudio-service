@@ -1,7 +1,8 @@
 from django.shortcuts import render
 import requests
-from gstudio_service.settings import URL
+from gstudio_service.settings import HOSTNAME
 from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
 
 # Create your views here.
 @csrf_exempt
@@ -25,6 +26,6 @@ def create_or_update_page(request):
 		created_by = request.POST.get("created_by")
 		node_id = request.POST.get("node_id")		
 
-	URL = URL + group_id + "/course/save_course_page/"
+	URL = HOSTNAME + group_id + "/course/save_course_page/"
 	response = requests.post(URL,data={"lan":lan,"name":name,"content_org":content_org,"alt_name":alt_name,"api_call":api_call,"created_by":created_by,"node_id":node_id})
 	return HttpResponse(response,content_type="application/json")
