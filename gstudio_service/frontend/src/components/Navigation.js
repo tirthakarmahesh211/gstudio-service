@@ -1,4 +1,14 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Group_index from './groups/Group_index';
+import Resourses from './Resourses';
+import Courses from './Courses';
+import Blogs from './Blogs';
+import Pages from './Pages';
+import Updates from './Updates';
+
+
+
 
 class Navigation extends Component {
 
@@ -8,6 +18,7 @@ class Navigation extends Component {
 
   render() {
     return (
+         <Router>
             <div className="wrapper">
 
             <nav id="sidebar">
@@ -33,23 +44,22 @@ class Navigation extends Component {
 
 
                 <li className="active">
-                    <a href="#">Updates</a>
+                    <Link to={'/'} className="nav-link"> Updates</Link>
                 </li>
                 <li>
-                    <a href="#">Groups</a>
-                    
+                    <Link to={'/Group_index'} className="nav-link"> Groups</Link>     
                 </li>
                 <li>
-                    <a href="#">Courses</a>
+                    <Link to={'/Courses'} className="nav-link"> Courses</Link>
                 </li>
                 <li>
-                    <a href="#">Blogs</a>
+                    <Link to={'/Blogs'} className="nav-link"> Blogs</Link>
                 </li>
                 <li>
-                    <a href="#">Resourses</a>
+                    <Link to={'/Resourses'} className="nav-link"> Resourses</Link>
                 </li>
                 <li>
-                    <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Pages</a>
+                    <Link to={'/Pages'} className="nav-link"> <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Pages</a></Link>
                     <ul className="collapse list-unstyled" id="pageSubmenu1">
                         <li>
                             <a href="#">Page 1</a>
@@ -81,103 +91,18 @@ class Navigation extends Component {
 
         </nav>
 
-        <div id="content">
-
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <div className="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" className="navbar-btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <button className="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i className="fas fa-align-justify"></i>
-                    </button>
-
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="nav navbar-nav ml-auto">
-                            <li className="nav-item active">
-                                <a className="nav-link" href="#">Page</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Page</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Page</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Page</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+        <Switch>
+              <Route exact path='/' component={Updates} />
+              <Route path='/Group_index' component={Group_index} />
+              <Route path='/Courses' component={Courses} />
+              <Route path='/Blogs' component={Blogs} />
+              <Route path='/Resourses' component={Resourses} />
+              <Route path='/Pages' component={Pages} />
+          </Switch>
 
 
-            <div className="row">
-    <div className="col-md-8 col-xs-12 contentcenter">
-
-        <div className="card ">
-                 <div className="card-header">Header</div>
-                    <div className="card-body">
-                        <h2>Collapsible Sidebar Using Bootstrap 4</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div className="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div className="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div className="line"></div>
-
-            <h3>Lorem Ipsum Dolor</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-
-                    </div> 
-                <div className="card-footer">Footer</div>
-</div>   
-
-            
     </div>
-    <div className="col-md-4 col-xs-12">
-
-        <div className="card">
-  <div className="card-header">Header</div>
-  <div className="card-body">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div className="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div className="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div className="line"></div>
-
-            <h3>Lorem Ipsum Dolor</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-
-  </div> 
-  <div className="card-footer">Footer</div>
-</div>
-            
-  </div>
-            
-                    </div>
-    </div>
+     </Router>
 
         )
      }       
