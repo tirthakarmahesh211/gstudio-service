@@ -6,8 +6,7 @@ import Courses from './Courses';
 import Blogs from './Blogs';
 import Pages from './Pages';
 import Updates from './Updates';
-
-
+import metastudio from './../icons/metastudiologo.png';
 
 
 class Navigation extends Component {
@@ -23,7 +22,7 @@ class Navigation extends Component {
 
             <nav id="sidebar">
             <div className="sidebar-header">
-                <h3>Metastudio</h3>
+                <img src ={metastudio} width="250"/>
             </div>
 
 
