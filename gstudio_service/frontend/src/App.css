@@ -34,6 +34,10 @@ a, a:hover, a:focus {
     margin-bottom: 40px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
+.grid-button {
+    margin-left: 300px;
+    padding :10px;
+}
 
 .navbar-btn {
     box-shadow: none;
@@ -78,8 +82,8 @@ a, a:hover, a:focus {
 }
 
 #sidebar .sidebar-header {
-    padding: 20px;
-    background: #6d7fcc;
+    padding: 2px;
+    
 }
 
 #sidebar ul.components {
