@@ -2,13 +2,34 @@
 
 import React, { Component } from 'react';
 import Header from '../Header';
+import axios from 'axios';
 
-class Group_index extends Component {
+
+class Group_index extends Component {  
+
+	constructor(props){
+	  super(props)
+	  this.state = {
+	    users: [],
+	    store: []
+	  }
+	}
+	componentDidMount(){
+	  axios.get('https://nroer.gov.in/api/v1?_type=Group')
+	  .then(json => console.log(json))
+	}	
+
   render() {
     return (
-
     	<div id="content"> 
     	<Header/>
+    	<nav aria-label="breadcrumb">
+		  <ol className="breadcrumb">
+		    <li className="breadcrumb-item"><a href="#">Members</a></li>
+		    <li className="breadcrumb-item"><a href="#">Groups</a></li>
+		    <li className="breadcrumb-item active" aria-current="page">Group Name</li>
+		  </ol>
+		</nav>
     		<div className="row">
     			<div className="col-md-8  contentcenter">
     				<div className="card ">

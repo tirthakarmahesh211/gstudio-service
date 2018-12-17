@@ -1,9 +1,7 @@
-
-
 import React, { Component } from 'react';
 import Header from './Header';
 
-class Updates extends Component {
+class Blogs extends Component {
   render() {
     return (
       
@@ -13,7 +11,7 @@ class Updates extends Component {
     			<div className="col-md-8  contentcenter">
     				<div className="card ">
     					<div className="card-header">
-    						Updates
+    						Groups
     					</div>
     					<div className="card-body">
     					
@@ -26,7 +24,7 @@ class Updates extends Component {
     			<div className="col-md-4 ">
     				<div className="card">
     					<div className="card-header">
-    						Upadtes Desc
+    						Group Detail
     					</div>
     					<div className="card-body">
     					</div>
@@ -42,4 +40,4 @@ class Updates extends Component {
   }
 }
 
-export default Updates;
+export default Blogs;
