@@ -8,67 +8,177 @@ class Navigation extends Component {
 
   render() {
     return (
+            <div className="wrapper">
+
+            <nav id="sidebar">
+            <div className="sidebar-header">
+                <h3>Metastudio</h3>
+            </div>
+
+
+            <ul className="list-unstyled components">
+
+                <li className="sidebar-search">
+                    <div>
+                        <div className="input-group">
+                            <input type="text" className="form-control search-menu" placeholder="Search..."/>
+                            <div className="input-group-append">
+                                <span className="input-group-text">
+                                    <i className="fa fa-search" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+
+                <li className="active">
+                    <a href="#">Updates</a>
+                </li>
+                <li>
+                    <a href="#">Groups</a>
+                    
+                </li>
+                <li>
+                    <a href="#">Courses</a>
+                </li>
+                <li>
+                    <a href="#">Blogs</a>
+                </li>
+                <li>
+                    <a href="#">Resourses</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Pages</a>
+                    <ul className="collapse list-unstyled" id="pageSubmenu1">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Topic Map</a>
+                </li>
+                <li>
+                    <a href="#">Mind Map</a>
+                </li>
+                <li>
+                    <a href="#">Concept Map</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">Analytics</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <div id="content">
+
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <button className="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <a className="navbar-brand" href="#">Metastudio </a>
+                <div className="container-fluid">
 
-                <div className="ml-auto order-lg-last">
-                    <ul className="navbar-nav flex-row">
-                        <li className="nav-item pr-3 pr-lg-0">
-                            <a className="nav-link" href="#">
-                                <i className="fa fa-bell" aria-hidden="true"></i>
-                                <span className="badge badge-pill badge-danger">5</span>
-                            </a>
-                        </li>
-                        <li className="nav-item pr-3 pr-lg-0">
-                            <a className="nav-link" href="#">
-                                <i className="fa fa-envelope" aria-hidden="true"></i>
-                                <span className="badge badge-pill badge-warning">6</span>
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">
-                                <i className="fa fa-telegram" aria-hidden="true"></i>
-                                <span className="badge badge-pill badge-primary">8</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                    <button type="button" id="sidebarCollapse" className="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button className="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i className="fas fa-align-justify"></i>
+                    </button>
 
-                <button className="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation2">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="#">Left Home <span className="sr-only">(current)</span></a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Left Link 1</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Left Link 2</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div className="collapse navbar-collapse" id="navbarSupportedContent2">
-                    <ul className="navbar-nav mr-auto d-lg-none">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="#">Right Home <span className="sr-only">(current)</span></a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Right Link 1</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Right Link 2</a>
-                        </li>
-                    </ul>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="nav navbar-nav ml-auto">
+                            <li className="nav-item active">
+                                <a className="nav-link" href="#">Page</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Page</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Page</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Page</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
+
+
+            <div className="row">
+    <div className="col-md-8 col-xs-12 contentcenter">
+
+        <div className="card ">
+                 <div className="card-header">Header</div>
+                    <div className="card-body">
+                        <h2>Collapsible Sidebar Using Bootstrap 4</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <div className="line"></div>
+
+            <h2>Lorem Ipsum Dolor</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <div className="line"></div>
+
+            <h2>Lorem Ipsum Dolor</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <div className="line"></div>
+
+            <h3>Lorem Ipsum Dolor</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+                    </div> 
+                <div className="card-footer">Footer</div>
+</div>   
+
+            
+    </div>
+    <div className="col-md-4 col-xs-12">
+
+        <div className="card">
+  <div className="card-header">Header</div>
+  <div className="card-body">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <div className="line"></div>
+
+            <h2>Lorem Ipsum Dolor</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <div className="line"></div>
+
+            <h2>Lorem Ipsum Dolor</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <div className="line"></div>
+
+            <h3>Lorem Ipsum Dolor</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+
+  </div> 
+  <div className="card-footer">Footer</div>
+</div>
+            
+  </div>
+            
+                    </div>
+    </div>
+
         )
      }       
   }   
