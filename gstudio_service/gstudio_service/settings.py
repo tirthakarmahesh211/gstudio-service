@@ -124,9 +124,6 @@ DISCOURSE_USERNAME = ""
 
 DISCOURSE_URL = ""
 
-try:
-    from gstudio_service.local_settings import *
-    # print "Local settings applied"
-except:
-    # print "Default settings applied"
-    pass
+
+URL = ""
+

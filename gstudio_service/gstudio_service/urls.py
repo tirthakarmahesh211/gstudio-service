@@ -18,9 +18,6 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('group/', include('discourse.urls.group')),
-    path('page/', include('discourse.urls.page')),
-    path('message/', include('discourse.urls.message')),
-    path('file/', include('discourse.urls.file')),
 
+    path('create_or_update_page/', create_or_update_page, name="create_or_update_page")
 ]
