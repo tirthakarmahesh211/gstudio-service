@@ -1,22 +1,31 @@
-
-
 import React, { Component } from 'react';
 import Header from '../Header';
 import axios from 'axios';
+import 'whatwg-fetch'
+import cookie from 'react-cookies'
 
 
 class Group_index extends Component {  
-
-	constructor(props){
-	  super(props)
-	  this.state = {
-	    users: [],
-	    store: []
-	  }
+	loadGroups(){
+		let endpoint = 'https://nroer.gov.in/api/v1?_type=Group'
+		let lookupOptions = {
+			method: "GET",
+			headers:{
+				'Content-Type': 'application/json'
+			}
+		}
+		fetch(endpoint, lookupOptions)
+		.then(function(response){
+			return response.json()
+		}).then(function(responseData){
+			console.log(responseData)
+		}).catch(function(error){
+			console.log("error", error)
+		})
 	}
+
 	componentDidMount(){
-	  axios.get('https://nroer.gov.in/api/v1?_type=Group')
-	  .then(json => console.log(json))
+		this.loadGroups()
 	}	
 
   render() {
