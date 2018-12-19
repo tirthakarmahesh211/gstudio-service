@@ -155,7 +155,9 @@ a.article, a.article:hover {
     color: #fff !important;
 }
 
-
+.popover{
+    max-width: 100%; /* Max Width of the popover (depending on the container!) */
+}
 
 /* ---------------------------------------------------
     CONTENT STYLE

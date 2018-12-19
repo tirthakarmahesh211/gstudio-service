@@ -7,6 +7,9 @@ import notification from './../icons/notification.png';
 import badge from './../icons/badge.png';
 import avatar from './../icons/avatar.png';
 import grid from './../icons/9grid.png';
+import groups from './../icons/groups.png';
+
+
 
 class Header extends Component {
   render() {
@@ -23,7 +26,14 @@ class Header extends Component {
                     </button>
                     <div className="grid-button">
 
-                        <a className="nav-link" href="#" title="" data-toggle="popover" data-placement="bottom" data-html="true" data-content=" <a href=''>Groups</a><br><a href=''>Courses</a><br><a href=''>Blogs</a><br><a href=''>Resources</a><br><a href=''>Pages</a>"><img src ={grid} alt="" width="30" height="30"/></a>
+                        <a className="nav-link" href="#" title="" data-toggle="popover" data-placement="bottom" data-html="true" data-content="
+                          <i class='fas fa-users' style='font-size:36px'></i><a href=''>Groups</a> &emsp; &emsp; &emsp;
+                          <i class='fas fa-chalkboard-teacher' style='font-size:36px'></i><a href=''>Courses</a><br>
+                          <i class='fas fa-file-alt' style='font-size:36px'></i><a href=''>Blogs</a>&emsp; &emsp; &emsp; &emsp;
+                          <i class='fas fa-boxes' style='font-size:36px'></i><a href=''>Resources</a><br>
+                          <i class='far fa-file-alt' style='font-size:36px'></i><a href=''>Pages</a>">
+                          <img src ={grid} alt="" width="30" height="30"/>
+                          </a>
 
                     </div>
 

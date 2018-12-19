@@ -45,6 +45,7 @@ class Navigation extends Component {
                 <li className="active">
                     <Link to={'/'} className="nav-link"> Updates</Link>
                 </li>
+                {/*
                 <li>
                     <Link to={'/Group_index'} className="nav-link"> Groups</Link>     
                 </li>
@@ -70,7 +71,7 @@ class Navigation extends Component {
                             <a href="#">Page 3</a>
                         </li>
                     </ul>
-                </li>
+                </li>*/}
                 <li>
                     <a href="#">Topic Map</a>
                 </li>
