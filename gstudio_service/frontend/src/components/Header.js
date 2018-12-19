@@ -40,7 +40,7 @@ class Header extends Component {
                             <li className="nav-item">
                                 <a className="nav-link" href="#"><img src ={message} alt="" width="30" height="30"/></a>
                             </li>
-                            <li className="nav-item">
+                           {/* <li className="nav-item">
                                 <a className="nav-link" href="#"><img src ={bookmark} alt="" width="30" height="30"/></a>
                             </li>
                             <li className="nav-item">
@@ -48,7 +48,7 @@ class Header extends Component {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#"><img src ={badge} alt="" width="30" height="30"/></a>
-                            </li>
+                            </li>*/}
                             <li className="nav-item">
                                 <a className="nav-link" href="#"><img src ={avatar} alt="" width="30" height="30"/></a>
                             </li>
