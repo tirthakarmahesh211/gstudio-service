@@ -22,7 +22,7 @@ class Navigation extends Component {
 
             <nav id="sidebar">
             <div className="sidebar-header">
-                <img src ={metastudio} width="250"/>
+                <img src ={metastudio} width="250" alt="logo"/>
             </div>
 
 
