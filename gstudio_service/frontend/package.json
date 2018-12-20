@@ -21,8 +21,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "devDependencies": {
-    "babel-plugin-import": "^1.6.3"
+  "babel": {      // nest config under "babel"
+    "presets": [
+      "es2015",
+    ],
+    "plugins": ["transform-class-properties"]
   },
   "eslintConfig": {
     "extends": "react-app"
