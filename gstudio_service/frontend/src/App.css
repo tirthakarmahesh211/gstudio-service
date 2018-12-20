@@ -119,6 +119,11 @@ a[data-toggle="collapse"] {
     position: relative;
 }
 
+.rpm-trigger{
+  font-size:30px;
+  cursor:pointer;
+}
+
 .dropdown-toggle::after {
     display: block;
     position: absolute;

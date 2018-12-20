@@ -8,6 +8,12 @@ import Pages from './Pages';
 import Updates from './Updates';
 import metastudio from './../icons/metastudiologo.png';
 
+const menuItems = [
+    'Updates',
+    'Groups',
+    'Courses',
+    'Pages'
+]
 
 class Navigation extends Component {
 
