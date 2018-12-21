@@ -29,3 +29,15 @@ def create_or_update_page(request):
 	URL = HOSTNAME + group_id + "/course/save_course_page/"
 	response = requests.post(URL,data={"lan":lan,"name":name,"content_org":content_org,"alt_name":alt_name,"api_call":api_call,"created_by":created_by,"node_id":node_id})
 	return HttpResponse(response,content_type="application/json")
+
+@csrf_exempt
+def get_pages(request):
+	if request.GET:
+		group_id = request.GET.get("group_id")
+
+	elif request.POST:
+		group_id = request.POST.get("group_id")
+
+	URL = HOSTNAME + group_id + "/course/activities/"
+	response = requests.post(URL,data={})
+	return HttpResponse(response,content_type="application/json")
