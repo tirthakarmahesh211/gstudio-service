@@ -19,5 +19,6 @@ from webapp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('create_or_update_page/', create_or_update_page, name="create_or_update_page")
+    path('create_or_update_page/', create_or_update_page, name="create_or_update_page"),
+    path('get_pages/', get_pages, name="get_pages")
 ]
