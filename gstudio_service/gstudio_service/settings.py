@@ -25,7 +25,7 @@ SECRET_KEY = 'cu91*g-8dv(cxcypxfum9(bn0%2=5+*&6)qbt^6875u%gp38sk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'frontend'
+    'frontend',
     'corsheaders',
 ]
 
@@ -127,12 +127,6 @@ DISCOURSE_USERNAME = ""
 
 DISCOURSE_URL = ""
 
-HOSTNAME = "https://staging.metastudio.org/"
+HOSTNAME = ""
 
 URL = ""
-
-# CORS_URLS_REGEX = r'^/api.*'
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ORIGIN_WHITELIST = (
-    '*'
-)
