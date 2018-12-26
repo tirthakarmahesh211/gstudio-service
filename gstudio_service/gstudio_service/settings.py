@@ -25,7 +25,7 @@ SECRET_KEY = 'cu91*g-8dv(cxcypxfum9(bn0%2=5+*&6)qbt^6875u%gp38sk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -127,13 +127,8 @@ DISCOURSE_USERNAME = ""
 
 DISCOURSE_URL = ""
 
+HOSTNAME = ""
 
-URL = ""
+HOSTNAME = "http://158.144.43.11:1200/"
 
-CORS_URLS_REGEX = r'^/api.*'
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ORIGIN_WHITELIST = (
-    '*',
-    'https://nroer.gov.in',
-    'http://staging.metastudio.org',
-)
+CORS_ORIGIN_ALLOW_ALL= True
