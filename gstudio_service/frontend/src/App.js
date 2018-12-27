@@ -14,7 +14,6 @@ import {listGroups} from './components/Groups/listGroups';
 import {listCourses} from './components/Courses/listCourses';
 import listBlogs from './components/Blogs/listBlogs';
 
-
 import {ScrollPanel} from 'primereact/components/scrollpanel/ScrollPanel';
 import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';
