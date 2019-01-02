@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import TableRow from './TableRow';
+import CreatePage from './create_Page';
+import {Button} from 'primereact/button';
 
 export class listPages extends React.Component {
 
@@ -20,11 +22,7 @@ export class listPages extends React.Component {
             this.setState({
                 pages
             });
-          })
-          .catch( error =>{
-            let response = error.response;
-            alert("Error loading data:" + response.status + " "+ response.statusText);
-          });         
+          })        
     }
 
     tabRow(){
@@ -35,9 +33,17 @@ export class listPages extends React.Component {
 
     render(){
         return(
-            <div>
-                    {this.tabRow()}
-            </div>
+
+                <div className="p-grid">
+                    <div className="p-col-12 p-md-12 p-lg-12">
+                    <div className="card card-w-title">
+                      <CreatePage/>
+                                           <div className="p-col-12 p-md-12">
+                      {this.tabRow()}
+                      </div>
+                     </div> 
+                </div>
+              </div>  
         );
     }
 } 

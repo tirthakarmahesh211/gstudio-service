@@ -277,7 +277,7 @@ a {
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16); }
     .layout-wrapper .layout-sidebar .layout-logo {
       text-align: center;
-      margin-top: 0px; }
+      margin-top: 24px; }
     .layout-wrapper .layout-sidebar .profile {
       text-align: center;
       padding: 20px 0; }

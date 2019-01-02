@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import {AppTopbar} from './AppTopbar';
 import {AppMenu} from './AppMenu';
 import {AppInlineProfile} from './AppInlineProfile';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
 
 import {MenusDemo} from './components/MenusDemo';

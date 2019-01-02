@@ -8,13 +8,10 @@ import { HashRouter } from 'react-router-dom'
 import ScrollToTop from './ScrollToTop';
 
 ReactDOM.render(
-    <HashRouter>
-        <ScrollToTop>
+    
         	<BrowserRouter>
-    <App />
-    </BrowserRouter>
-        </ScrollToTop>
-    </HashRouter>,
+    			<App />
+    		</BrowserRouter>,
     document.getElementById('root')
 );
 
