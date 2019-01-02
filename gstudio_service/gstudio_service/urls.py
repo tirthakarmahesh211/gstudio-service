@@ -20,6 +20,10 @@ from webapp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('create_or_update_page/', create_or_update_page, name="create_or_update_page"),
-    path('get_pages/', get_pages, name="get_pages")
-
+    path('get_pages/', get_pages, name="get_pages"),
+    path('delete_page/', delete_page, name="delete_page"),
+    path('get_groups/', get_groups, name="get_groups"),
+    path('get_courses/', get_courses, name="get_courses"),
+    path('get_draftcourses/', get_draftcourses, name="get_draftcourses"),
+    path('upload_file/', upload_file, name="upload_file"),
 ]
