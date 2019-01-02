@@ -130,3 +130,12 @@ DISCOURSE_URL = ""
 HOSTNAME = ""
 
 URL = ""
+
+CORS_ORIGIN_ALLOW_ALL=False
+
+try:
+    from local_settings import *
+    # print "Local settings applied"
+except:
+    # print "Default settings applied"
+    pass
