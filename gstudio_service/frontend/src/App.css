@@ -119,6 +119,11 @@ a[data-toggle="collapse"] {
     position: relative;
 }
 
+.rpm-trigger{
+  font-size:30px;
+  cursor:pointer;
+}
+
 .dropdown-toggle::after {
     display: block;
     position: absolute;
@@ -155,7 +160,9 @@ a.article, a.article:hover {
     color: #fff !important;
 }
 
-
+.popover{
+    max-width: 100%; /* Max Width of the popover (depending on the container!) */
+}
 
 /* ---------------------------------------------------
     CONTENT STYLE

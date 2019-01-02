@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Header from '../Header';
 import axios from 'axios';
 import 'whatwg-fetch'
@@ -7,11 +8,12 @@ import cookie from 'react-cookies'
 
 class Group_index extends Component {  
 	loadGroups(){
-		let endpoint = 'https://nroer.gov.in/api/v1?_type=Group'
+		let endpoint = 'https://staging.metastudio.org/api/v1?_type=Group'
 		let lookupOptions = {
 			method: "GET",
 			headers:{
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				'Access-Control-Allow-Origin': '*',
 			}
 		}
 		fetch(endpoint, lookupOptions)
@@ -34,8 +36,7 @@ class Group_index extends Component {
     	<Header/>
     	<nav aria-label="breadcrumb">
 		  <ol className="breadcrumb">
-		    <li className="breadcrumb-item"><a href="#">Members</a></li>
-		    <li className="breadcrumb-item"><a href="#">Groups</a></li>
+
 		    <li className="breadcrumb-item active" aria-current="page">Group Name</li>
 		  </ol>
 		</nav>

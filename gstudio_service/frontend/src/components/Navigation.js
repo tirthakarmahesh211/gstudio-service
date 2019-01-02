@@ -8,6 +8,12 @@ import Pages from './Pages';
 import Updates from './Updates';
 import metastudio from './../icons/metastudiologo.png';
 
+const menuItems = [
+    'Updates',
+    'Groups',
+    'Courses',
+    'Pages'
+]
 
 class Navigation extends Component {
 
@@ -22,7 +28,7 @@ class Navigation extends Component {
 
             <nav id="sidebar">
             <div className="sidebar-header">
-                <img src ={metastudio} width="250"/>
+                <img src ={metastudio} width="250" alt="logo"/>
             </div>
 
 
@@ -45,6 +51,7 @@ class Navigation extends Component {
                 <li className="active">
                     <Link to={'/'} className="nav-link"> Updates</Link>
                 </li>
+                {/*
                 <li>
                     <Link to={'/Group_index'} className="nav-link"> Groups</Link>     
                 </li>
@@ -70,7 +77,7 @@ class Navigation extends Component {
                             <a href="#">Page 3</a>
                         </li>
                     </ul>
-                </li>
+                </li>*/}
                 <li>
                     <a href="#">Topic Map</a>
                 </li>
