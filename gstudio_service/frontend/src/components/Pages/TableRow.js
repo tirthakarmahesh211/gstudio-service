@@ -16,10 +16,10 @@ class TableRow extends Component {
 
     return (
 
-                <div className="p-col-6 p-md-6 p-lg-3">
+          <div className="p-col-6 p-md-6 p-lg-3">
 
-                   <Card title={this.props.obj._source.name} subTitle={this.props.obj._source.educationalsubject} style={{width: '200px'}} className="ui-card-shadow" footer={footer} header={header}>
-                        {/*<div dangerouslySetInnerHTML ={{__html: this.props.obj._source.content}}></div>*/}
+              <Card title={this.props.obj._source.name} subTitle={this.props.obj._source.educationalsubject} style={{width: '200px'}} className="ui-card-shadow" footer={footer} header={header}>
+              {/*<div dangerouslySetInnerHTML ={{__html: this.props.obj._source.content}}></div>*/}
         </Card>
         
         </div>
