@@ -128,9 +128,22 @@ DISCOURSE_USERNAME = ""
 
 DISCOURSE_URL = ""
 
-HOSTNAME = "http://158.144.43.11:1200/"
 
-# HOSTNAME = "https://staging.metastudio.org/"
+#HOSTNAME = "http://158.144.43.11:1200/"
+
+HOSTNAME = "https://staging.metastudio.org/"
 
 CORS_ORIGIN_ALLOW_ALL= True
 
+
+
+URL = ""
+
+CORS_ORIGIN_ALLOW_ALL=False
+
+try:
+    from local_settings import *
+    # print "Local settings applied"
+except:
+    # print "Default settings applied"
+    pass
