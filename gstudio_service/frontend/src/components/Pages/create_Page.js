@@ -7,6 +7,12 @@ import {InputText} from 'primereact/inputtext';
 import {InputTextarea} from 'primereact/inputtextarea';
 import {Dropdown} from 'primereact/dropdown';
 
+import cookie from 'react-cookies'
+import CsrfToken from '../CsrfToken';
+import DjangoCSRFToken from 'django-react-csrftoken'
+
+import 'whatwg-fetch';
+
 export default class CreatePage extends Component {
         
     constructor() {
@@ -67,9 +73,34 @@ export default class CreatePage extends Component {
             group_id: 'home',
             created_by: 13988
         }
+        
+        // const csrftoken = cookie.load('csrftoken')
 
-        axios.post(`http://localhost:7000/create_or_update_page/`, pageinfo)
-            .then(response => console.log(response.data));
+
+        let endpoint = 'http://158.144.43.11:1200/home/course/save_course_page/'
+        
+        let lookupOptions = {
+            method: "POST",
+            headers: {
+              'X-CSRFToken': CsrfToken.csrfToken,
+              'credentials': 'same-origin',
+              'mode':'cors',
+              "Access-Control-Allow-Credentials" : "true"
+
+
+            }            
+        }
+        console.log(CsrfToken.csrfToken)
+
+        fetch(endpoint, lookupOptions)
+        .then(function(response){
+            return response
+        }).catch(function(error){
+            console.log("error", error)
+        })
+
+        // axios.post(`http://158.144.43.11:1200/home/course/save_course_page/`, pageinfo)
+        //     .then(response => console.log(response.data));
 
         this.setState({
             name: '',
@@ -104,6 +135,7 @@ export default class CreatePage extends Component {
 
                 <div className="content-section introduction">
                     <div className="feature-intro">
+                       
 
                         <p>List of Pages </p>
                         <span>  <Button label="Add New Page" icon="pi pi-external-link" onClick={this.onClick} /></span>
@@ -114,6 +146,7 @@ export default class CreatePage extends Component {
                 <div className="content-section implementation">
 
                     <Dialog header="Add Page" visible={this.state.visible} style={{width: '50vw'}} footer={footer} onHide={this.onHide} maximizable>
+                     <CsrfToken/>
                       <div className="p-float-label p-col-12 p-md-8">
                             <InputText id="float-input" type="text" size="30" value={this.state.name} onChange={this.onNameChange} />
                             <label htmlFor="float-input">Name</label>

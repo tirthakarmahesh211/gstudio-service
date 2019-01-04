@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsPostCsrfMiddleware'
 ]
 
 ROOT_URLCONF = 'gstudio_service.urls'
@@ -127,8 +128,9 @@ DISCOURSE_USERNAME = ""
 
 DISCOURSE_URL = ""
 
-HOSTNAME = ""
-
 HOSTNAME = "http://158.144.43.11:1200/"
 
+# HOSTNAME = "https://staging.metastudio.org/"
+
 CORS_ORIGIN_ALLOW_ALL= True
+

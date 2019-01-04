@@ -9,7 +9,7 @@ import { withRouter } from "react-router-dom";
 import {MenusDemo} from './components/MenusDemo';
 
 import {Updates} from './components/Updates/updates';
-import {listPages} from './components/Pages/listPages';
+import listPages from './components/Pages/listPages';
 import {listGroups} from './components/Groups/listGroups';
 import {listCourses} from './components/Courses/listCourses';
 import listBlogs from './components/Blogs/listBlogs';
