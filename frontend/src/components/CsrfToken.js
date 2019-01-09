@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 
 import 'whatwg-fetch';
 
-
+// const csrfToken= ""
 export default class CsrfToken extends Component {
-	constructor(props){
+	
+  constructor(props){
 		super(props);
 		this.state = {
 			csrfToken:''
@@ -13,8 +14,8 @@ export default class CsrfToken extends Component {
 
 	loadCsrfToken(){
     	const endPoint = `http://158.144.43.11:1200/csrf/`
-
-    	let thisComp = this
+      // const csrfToken = {csrfToken}
+    	// let thisComp = this
 
 
     	let lookupOptions = {
@@ -24,33 +25,40 @@ export default class CsrfToken extends Component {
     	
 	    fetch(endPoint,lookupOptions)
 	      .then(function(response){
+          console.log("xxxxxxxxxxxxxxxxxxxxxxxxx")
 	        return response.json()
 	      }).then(function(responseData){
 	        console.log(responseData)
-	        thisComp.setState({
-	          csrfToken:thisComp.state.csrfToken.concat(responseData.csrfToken)
+	        console.log("mmmmmmmmmmmmmmmmmmmmmmmmm")
+          this.setState({
+	          csrfToken:responseData.csrfToken
 	        })
+          
+          console.log(responseData.csrfToken)
+          console.log("function ")
 	      }).catch(function(error){
 	        console.log("error", error)
 	      })
+
   }
 
 
   componentDidMount(){
 
     this.setState({
-      csrfToken:''
+      csrfToken:csrfToken
     })
     this.loadCsrfToken()
   }
 
-
   render(){
-                  const {csrfToken} = this.state
-                  console.log(csrfToken)
+                  // const {csrfToken} = this.state
+                  // console.log(csrfToken)
+                  console.log("-====================================================")
     return(
 
-    		 <input type="hidden" name="csrfmiddlewaretoken" value={csrfToken} />
+    		 <input type="hidden" name="csrfmiddlewaretoken" value={"csrfToken"} />
         );
   }
 }
+export const csrfToken={csrfToken};
