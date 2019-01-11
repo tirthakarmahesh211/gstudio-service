@@ -7,21 +7,61 @@ import {Toolbar} from 'primereact/toolbar';
 import {Button} from 'primereact/button';
 import {Card} from 'primereact/card';
 import {Dialog} from 'primereact/dialog';
-
-import {GroupCard} from './groupCard'
-
+import axios from 'axios';
+import {GroupCard} from './groupCard';
+import TableRow from './TableRow';
+import 'whatwg-fetch';
 
 export class listGroups extends Component {
      
      constructor() {
         super();
         this.state = {
+            groups:[],
             breadcrumdItems: [
                 {label:'Groups'}
             ],
             dialogVisible: false,
         }
-     }          
+     }
+
+      loadGroups(){
+        const endPoint = `http://158.144.43.11:1200/explore/workspaces?api_call=True`
+
+        let thisComp = this
+
+
+        let lookupOptions = {
+          method: "GET"
+        }  
+
+        fetch(endPoint,lookupOptions)
+          .then(function(response){
+            return response.json()
+          }).then(function(responseData){
+            console.log(responseData)
+            thisComp.setState({
+              groups:thisComp.state.groups.concat(responseData.hits.hits)
+            })
+          }).catch(function(error){
+            console.log("error", error)
+          })
+      }
+
+
+      componentDidMount(){
+        this.setState({
+          groups:[]
+        })
+        this.loadGroups()
+      }         
+
+
+      tabRow(){
+             return this.state.groups.map(function(object, i){
+                return <div className="p-col-12 p-md-4 p-lg-4"><TableRow obj={object}  key={i} /></div>;
+            });
+      }
 
     render() {
             const dialogFooter = (
@@ -51,8 +91,15 @@ export class listGroups extends Component {
                                     </div>
                                 </div>
                             </Dialog>
-  
-                            <GroupCard />
+                        
+                           {/* <GroupCard />*/}
+
+                     <div className="p-grid"> 
+
+                          {this.tabRow()}
+
+                         
+                      </div>
                         </div>
 
                     </div>

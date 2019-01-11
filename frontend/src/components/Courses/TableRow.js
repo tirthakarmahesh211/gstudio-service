@@ -16,7 +16,7 @@ class TableRow extends Component {
 
     return (
           
-              <Card title={this.props.obj._source.name} subTitle={this.props.obj._source.educationalsubject} style={{width: '250px', height: '300px'}} className="ui-card-shadow" footer={footer} header={header}>
+              <Card title={this.props.obj._source.altnames} subTitle={this.props.obj._source.educationalsubject} style={{width: '250px', height: '300px'}} className="ui-card-shadow" footer={footer} header={header}>
               {/*<div dangerouslySetInnerHTML ={{__html: this.props.obj._source.content}}></div>*/}
         </Card>
         
