@@ -1,0 +1,384 @@
+body {
+	font-size:120%;
+	line-height:150%;
+	text-align:left;
+     padding:15px;
+}
+.block_element
+
+{
+
+display:block;
+
+}
+
+#MathSc .img_rt
+
+{
+
+float:right;
+
+height:auto;
+
+}
+#MathSc  img.img
+{
+	height:auto;
+	max-width:100%;
+}
+.img_lft
+
+{
+
+float:left;
+
+}
+
+p
+{
+text-align:justify;
+}
+#MathSc img
+{
+	position:relative;
+	top:15px;
+	height:40px;
+	
+}
+
+#MathSc img.small, #MathSc .image p img.small
+{
+	height:22px;
+	top:5px;
+	
+}
+#MathSc img.medium
+{
+	height:30px;
+	top:5px;
+	
+}
+#MathSc p.medium img
+{
+	height:30px;
+	top:5px;
+	
+}
+#MathSc p.small img
+{
+	height:22px;
+	top:5px;
+	
+}
+#MathSc .image  img
+{
+	position:relative;
+	top:15px;
+	height:auto;
+	max-width:100%;
+}
+#MathSc p img.img1
+{
+	position:relative;
+	top:14px;
+}
+#MathSc .img2
+{
+	position:relative;
+	top:20px;
+}
+#MathSc .img3
+{
+	position:relative;
+	top:0px;
+}
+#MathSc .img_wid
+{
+	margin-left: auto;
+    margin-right: auto;
+	display: block;
+	width:50%;
+}
+.clear
+{
+	clear:both;
+}
+.lining_box
+{
+border:2px solid #00aeef;
+padding:15px;
+border-radius:15px;
+}
+/* Chapter Name */
+h4
+{
+color:#000;
+font-size:1.3em;
+padding:10px;
+}
+/* Chapter number */
+h2
+{
+color:#fff;
+font-size:1.5em;
+background:#00aeef;
+padding:10px;
+}
+/* Concept Heading */
+.ConceptHeading, .highlight, .excercise, .topicHeading, .chapterHeading
+{
+color:#00aeef;
+font-size:1.3em;
+font-weight:bold;
+margin-top:20px;
+}
+/* Sub Heading */
+.SubHeading
+{
+color:#00aeef;
+font-size:1.1em;
+font-weight:bold;
+}
+/* Sub Heading 2*/
+.SubHeading2
+{
+color:#d1640f;
+font-size:1em;
+font-weight:bold;
+}
+
+.no_border table, .no_border td
+{border:0px solid red;
+}
+
+.underline_txt
+
+{
+
+font-decoration:underline;
+
+}
+
+.bold_txt
+
+{
+
+font-weight:bold;
+
+}
+
+.center_element
+
+{
+
+margin:auto;
+
+}
+
+.italics_txt
+
+{
+
+font-style:italic;
+
+}
+
+.block_element
+
+{
+
+display:block;
+
+}
+
+.img_rt
+
+{
+
+float:right;
+
+clear:both;
+
+}
+
+.img_lft
+
+{
+
+float:left;
+
+}
+* {
+margin:0;
+padding:0;
+}
+
+.image {
+text-align:center;
+}
+.author {
+text-align:right;
+}
+
+
+.center {
+text-align: center;
+}
+
+
+.box{
+background-color:rgba(3, 78, 162, 0.4);
+padding: 5px 5px 5px 5px;
+margin: 5px 5px 5px 5px;
+}
+
+.activityBox{
+background-color:rgba(206, 19, 55, 0.4);
+padding: 5px 5px 5px 5px;
+margin: 5px 5px 5px 5px;
+}
+
+.newWordsBox{
+background-color:rgba(252, 187, 118, 0.4);
+padding: 5px 5px 5px 5px;
+margin: 5px 5px 5px 5px;
+}
+.img_wid
+{
+	margin-left: auto;
+    margin-right: auto;
+	display: block;
+	width:80%;
+}
+.img_left
+{
+margin-left:0px;
+}
+ul
+{
+margin-left:45px;
+}
+.caption
+{
+font-style: italic; 
+font-size: 0.83em; 
+color: #00aeef;
+}
+.fig
+{
+font-weight:bold;
+color:#00aeef;
+}
+
+p
+{
+margin-top:10px;
+}
+
+.footer
+{
+display:none;
+}
+table td
+{
+padding:10px;
+}
+.conc
+{
+color:#006699;
+}
+div.layout
+{
+  text-align: center;
+}
+div.chapter_pos
+
+{
+
+text-align: center;
+width: 96%;
+position:absolute;
+top:60%;
+font-weight:bold;
+font-size:28px;
+color:#fff;
+
+}
+
+div.chapter_pos div
+
+{
+
+background:#003366;
+padding:10px;
+width:40%;
+margin:auto;
+opacity:0.9;
+
+}
+
+div.chapter_pos div span
+
+{
+font-size:0.7em;
+color:#aeaeae;
+line-height:200%;
+font-weight:normal;
+
+}
+
+.cover_img_small
+
+{
+
+width:50%;
+
+}
+@media only screen and (max-width: 767px) {
+
+
+div.chapter_pos
+
+
+{
+
+top:30%;
+
+font-size:1em;
+
+}
+
+div.chapter_pos div
+
+
+{
+
+width:70%;
+
+
+
+}
+
+.cover_img_small
+
+{
+
+width:90%;
+
+}
+
+}
+
+#prelims .heading-2
+{
+	font-weight:bold;
+}
+#prelims .heading, #prelims .char-style-override-17
+{
+	font-size: 1.667em; 
+	color:#00aeef;
+}
+#prelims .char-style-override-2
+{
+	font-style:italic;
+}

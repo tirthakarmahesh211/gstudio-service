@@ -1,0 +1,129 @@
+{
+    "_id": "55cb53a481fccb665e060027",
+    "_type": "GSystem",
+    "access_policy": "PUBLIC",
+    "altnames": null,
+    "annotations": [],
+    "attribute_set": [
+        {
+            "source": "NCERT"
+        },
+        {
+            "curricular": true
+        },
+        {
+            "educationalsubject": "Mathematics"
+        },
+        {
+            "educationalalignment": "NCF"
+        },
+        {
+            "interactivitytype": "Expositive"
+        },
+        {
+            "educationallevel": [
+                "Secondary"
+            ]
+        },
+        {
+            "educationaluse": "eBooks"
+        },
+        {
+            "audience": [
+                "Students"
+            ]
+        },
+        {
+            "discussion_enable": true
+        }
+    ],
+    "author_set": [],
+    "collection_set": [],
+    "comment_enabled": null,
+    "content": "<div id=\"content\">\n<h1 class=\"title\"></h1>\n<p>Chapter 13 of the Mathematics textbook for class 09\n</p></div>\n",
+    "content_org": "Chapter 13 of the Mathematics textbook for class 09",
+    "contributors": [
+        64
+    ],
+    "created_at": "12/08/2015 19:39:40:453000",
+    "created_by": 64,
+    "featured": null,
+    "group_set": [
+        "55ab34ff81fccb4f1d806025",
+        "55b35b4581fccb75e4a5b3ee"
+    ],
+    "if_file": {
+        "mid": {
+            "id": "574484b216b51c03ae8ae2bb",
+            "relurl": "0/5/2/c54b0f8b524e7892f24496e72c9fcd5ad4bf7db7f1c7da3f35338a3ea94fd.png"
+        },
+        "mime_type": "application/epub+zip",
+        "original": {
+            "id": "574484c616b51c03ae8ae2f7",
+            "relurl": "c/3/7/18311908e811493c32d87202cfeb515ab79fe1263bad59b30a9b9add8e193",
+            "_comment": "public/course_content/epub/18311908e811493c32d87202cfeb515ab79fe1263bad59b30a9b9add8e193"
+                       
+        },
+        "thumbnail": {
+            "id": "574484b216b51c03ae8ae2ba",
+            "relurl": "e/c/e/bfe5230decd0fd07a8f90454d17609ecec3a696dcd0d586724cfb8b6ae8b3.png"
+        }
+    },
+    "language": [
+        "en",
+        "English"
+    ],
+    "last_update": "24/05/2016 22:13:50:962000",
+    "legal": {
+        "copyright": "CC-BY-SA 4.0 unported",
+        "license": "HBCSE"
+    },
+    "location": [],
+    "login_required": null,
+    "member_of": [
+        "55ab34ff81fccb4f1d806001"
+    ],
+    "modified_by": 64,
+    "module_set": [],
+    "name": "Surface Areas and Volumes",
+    "origin": [],
+    "plural": null,
+    "post_node": [],
+    "prior_node": [
+        "55cb538081fccb665e05fe7e"
+    ],
+    "property_order": [],
+    "rating": [
+        {
+            "ip_address": "14.139.123.3",
+            "score": 0,
+            "user_id": null
+        }
+    ],
+    "relation_set": [
+        {
+            "has_thread": [
+                "561fb33481fccb544497aa5d"
+            ]
+        }
+    ],
+    "snapshot": {
+        "55ab34ff81fccb4f1d806025": "1.1",
+        "55b35b4581fccb75e4a5b3ee": "1.1"
+    },
+    "start_publication": null,
+    "status": "PUBLISHED",
+    "tags": [
+        "mensuration",
+        "surface areas",
+        "volumes",
+        "cuboid",
+        "cube",
+        "cylinder",
+        "cone",
+        "sphere",
+        "hemisphere"
+    ],
+    "type_of": [],
+    "url": "file"
+}

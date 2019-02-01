@@ -25,7 +25,7 @@ export  class listCourses extends Component {
      }
 
      loadCourses(){
-        const endPoint = `http://158.144.43.11:1200/explore/courses?api_call=True`
+        const endPoint = `https://staging.metastudio.org/explore/courses?api_call=True`
 
         let thisComp = this
 
@@ -91,7 +91,6 @@ export  class listCourses extends Component {
                                 </div>
                             </Dialog>
   
-                            <GroupCard />
 
 
                      <div className="p-grid"> 
@@ -117,7 +116,6 @@ export  class listCourses extends Component {
                         </div>
 
                     </div>    
-            	}
             </div>
          </div>
         )

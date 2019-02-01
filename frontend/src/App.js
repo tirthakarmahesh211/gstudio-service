@@ -10,9 +10,11 @@ import {MenusDemo} from './components/MenusDemo';
 
 import {Updates} from './components/Updates/updates';
 import listPages from './components/Pages/listPages';
+import PageDetails from './components/Pages/PageDetails';
 import {listGroups} from './components/Groups/listGroups';
 import {listCourses} from './components/Courses/listCourses';
 import listBlogs from './components/Blogs/listBlogs';
+import Readepub from './components/Readepub';
 
 import {ScrollPanel} from 'primereact/components/scrollpanel/ScrollPanel';
 import 'primereact/resources/themes/nova-light/theme.css';
@@ -166,8 +168,9 @@ class App extends Component {
                     <Route path="/courses" component={listCourses} />
                     <Route path="/pages" component={listPages} />
                     <Route path="/blogs" component={listBlogs} />
+                    <Route path="/epubs" component={Readepub} />
+                    <Route path="/:this.props.obj._source.name" component={PageDetails} />
                 </div>
-
 
                 <div className="layout-mask"></div>
             </div>

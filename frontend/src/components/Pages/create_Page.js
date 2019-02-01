@@ -86,13 +86,12 @@ export default class CreatePage extends Component {
         let lookupOptions = {
             method: "GET"
         }  
-        const endpoint2 = 'http://158.144.43.11:1200/home/course/save_course_page/'
+        const endpoint2 = 'https://staging.metastudio.org/home/course/save_course_page/'
        
         fetch(endpoint2,{
             credentials: 'include',
             method: 'POST',
-            mode: 'no-cors',
-            
+            mode: 'no-cors',         
             body: {}
         })
     }

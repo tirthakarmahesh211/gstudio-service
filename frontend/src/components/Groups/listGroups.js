@@ -26,7 +26,7 @@ export class listGroups extends Component {
      }
 
       loadGroups(){
-        const endPoint = `http://158.144.43.11:1200/explore/workspaces?api_call=True`
+        const endPoint = `https://staging.metastudio.org/explore/workspaces?api_call=True`
 
         let thisComp = this
 
@@ -92,7 +92,7 @@ export class listGroups extends Component {
                                 </div>
                             </Dialog>
                         
-                           {/* <GroupCard />*/}
+                           {/** <GroupCard />**/}
 
                      <div className="p-grid"> 
 
